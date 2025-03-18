@@ -1,6 +1,7 @@
 # JDK Packages
 
 Some helper scripts to generate lists of packages contained in a specific JDK version. 
+It uses https://github.com/bjhargrave/java-platform-packages to generate files for bnd.
 
 ## Usage Examples
 

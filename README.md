@@ -2,11 +2,11 @@
 
 Some helper scripts to generate lists of packages contained in a specific JDK version. 
 
-## Usage
+## Usage Examples
 
 ```sh
 
-# Download all JDKs
+# Download JDK 17
 ./download_jdk.sh 17
 
 # list packages for JDK17

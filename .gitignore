@@ -1,0 +1,6 @@
+jdks*
+.DS_Store
+*.class
+jdk*.properties
+jdk*.txt
+javasrc_temp

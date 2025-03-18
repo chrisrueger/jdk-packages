@@ -26,7 +26,7 @@ It uses https://github.com/bjhargrave/java-platform-packages to generate files f
 # list packages of JDK17 using CalculateJavaPlatformPackages.java
 # outputting a .properties file for bnd / bndtools
 # Source: https://github.com/bjhargrave/java-platform-packages
-./list_jdk_packages_for_bnd.sh 17 mac aarch64 > "jdk17-packages.properties"
+./list_jdk_packages_for_bnd.sh 17 mac aarch64 > "JavaSE_17.properties"
 ```
 
 ## Example Outputs 

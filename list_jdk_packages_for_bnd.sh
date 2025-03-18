@@ -1,10 +1,18 @@
 #!/bin/bash
 
-# Architecture and OS
-OS="mac"  # Change to "windows" or "mac" as needed
-ARCH="aarch64"
-# Optional argument to filter JDK versions (e.g., "17" to run only for jdk-17)
-version="$1"
+# Check if all required parameters are provided
+if [ $# -ne 3 ]; then
+    echo "Usage: $0 <JDK_VERSION> <OS> <ARCH>"
+    echo "Example: $0 17 linux x64"
+    echo "         $0 17 mac aarch64"
+    echo "         $0 17 windows x64"
+    exit 1
+fi
+
+# Mandatory parameters
+version="$1"   # JDK Version (e.g., 17 for JDK 17)
+OS="$2"        # OS Type (e.g., "linux", "mac", "windows")
+ARCH="$3"      # Architecture (e.g., "x64", "aarch64" for Mac M1)
 
 # Directory where JDKs are stored
 JDK_DIR="./jdks-$OS-$ARCH/jdk-$version"

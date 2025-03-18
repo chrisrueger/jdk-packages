@@ -8,17 +8,17 @@ It uses https://github.com/bjhargrave/java-platform-packages to generate files f
 ```sh
 
 # Download JDK 17
-./download_jdk.sh 17
+./download_jdk.sh 17 mac aarch64
 
 # list packages for JDK17
-./list_jdk_packages.sh 17
+./list_jdk_packages.sh 17 mac aarch64
 
 # list packages for JDK17 and write into file jdk17.txt
-./list_jdk_packages.sh 17 > jdk17.txt
+./list_jdk_packages.sh 17 mac aarch64 > jdk17.txt
 
 # list packages for JDK17 and write into file jdk17-onlypackages.txt
 # but extract only the packages
-./list_jdk_packages.sh 17 | awk '/^exports / {print $2}' > jdk17-onlypackages.txt
+./list_jdk_packages.sh 17 mac aarch64 | awk '/^exports / {print $2}' > jdk17-onlypackages.txt
 
 
 
@@ -26,15 +26,15 @@ It uses https://github.com/bjhargrave/java-platform-packages to generate files f
 # list packages of JDK17 using CalculateJavaPlatformPackages.java
 # outputting a .properties file for bnd / bndtools
 # Source: https://github.com/bjhargrave/java-platform-packages
-./list_jdk_packages_java.sh 17 > "jdk17-packages.properties"
+./list_jdk_packages_for_bnd.sh 17 mac aarch64 > "jdk17-packages.properties"
 ```
 
 ## Example Outputs 
 
-The following output can 
+The following output can be expected.
 
 ```shell
-# list_jdk_packages.sh 17
+# list_jdk_packages.sh 17 mac aarch64
 
 =============================
 Using JDK: ./jdks-mac-aarch64/jdk-17
@@ -69,7 +69,7 @@ contains sun.datatransfer.resources
 If you are only interested in the plain packages try using this:
 
 ```shell
-# ./list_jdk_packages.sh 17 | awk '/^exports / {print $2}' > jdk17-onlypackages.txt
+# ./list_jdk_packages.sh 17 mac aarch64 | awk '/^exports / {print $2}' > jdk17-onlypackages.txt
 
 java.io
 java.lang
@@ -82,10 +82,10 @@ java.lang.ref
 ```
 
 
-The following creates a .properties file for placing into https://github.com/bndtools/bnd/tree/master/biz.aQute.bndlib/src/aQute/bnd/build/model (e.g. see [JavaSE_17.properties](https://github.com/bndtools/bnd/blob/master/biz.aQute.bndlib/src/aQute/bnd/build/model/JavaSE_17.properties))
+The following creates a `.properties` file for placing into https://github.com/bndtools/bnd/tree/master/biz.aQute.bndlib/src/aQute/bnd/build/model (e.g. see [JavaSE_17.properties](https://github.com/bndtools/bnd/blob/master/biz.aQute.bndlib/src/aQute/bnd/build/model/JavaSE_17.properties))
 
 ```shell
-# list_jdk_packages.sh 17
+# ./list_jdk_packages_for_bnd.sh 17 mac aarch64 > "JavaSE_17.properties"
 
 org.osgi.framework.system.packages = \
  com.sun.jarsigner,\

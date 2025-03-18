@@ -31,7 +31,11 @@ It uses https://github.com/bjhargrave/java-platform-packages to generate files f
 
 ## Example Outputs 
 
-The following output can be expected.
+The following output can be expected using the different scripts.
+
+### Example 1: Simple ouput
+
+
 
 ```shell
 # list_jdk_packages.sh 17 mac aarch64
@@ -66,6 +70,8 @@ contains sun.datatransfer.resources
 
 ```
 
+### Example 2: Only packages
+
 If you are only interested in the plain packages try using this:
 
 ```shell
@@ -81,6 +87,10 @@ java.lang.ref
 
 ```
 
+### Example 3: bnd / Bndtools specific output
+
+This example is specific for [bnd / bndtools](https://github.com/bndtools/bnd). 
+It is basically a CLI wrapper around https://github.com/bjhargrave/java-platform-packages
 
 The following creates a `.properties` file for placing into https://github.com/bndtools/bnd/tree/master/biz.aQute.bndlib/src/aQute/bnd/build/model (e.g. see [JavaSE_17.properties](https://github.com/bndtools/bnd/blob/master/biz.aQute.bndlib/src/aQute/bnd/build/model/JavaSE_17.properties))
 

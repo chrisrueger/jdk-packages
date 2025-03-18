@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This script is specific for [bnd / bndtools](https://github.com/bndtools/bnd). 
+# It is basically a CLI wrapper around https://github.com/bjhargrave/java-platform-packages
+
 # Check if all required parameters are provided
 if [ $# -ne 3 ]; then
     echo "Usage: $0 <JDK_VERSION> <OS> <ARCH>"
